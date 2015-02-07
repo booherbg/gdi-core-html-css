@@ -1,0 +1,84 @@
+NOTES -- Class
+==============
+
+HTML is the markup of document structure
+CSS is the style of the document (colors, fonts, layout sizes)
+
+An html tag looks like this: <body> and has a closing tag like this: </body>
+Some objects don't have closing tags, like <img/>, <br/>, and <hr/>
+When an object doesn't have a closing tag, you end it with />
+
+
+All html objects have a <!DOCTYPE html> (or similar) and:
+  * <html></html> that wraps the entire document (after the doctype)
+  * <head></head> that containers information not shown in the main document
+  * <body></body> that contains the core document
+
+Example:
+<!DOCTYPE html>
+<html>
+   <head> ... </head>
+   <body> ... </body>
+</html>
+
+Paths (for <a> or <img>) can be relative or absolute. Absolute means you can
+reach across the internet and link directly to a resource not on your site,
+like 'http://google.com/' or 'http://imgur.com/fake-image.jpg'. Relative is
+"relative" to the location of your .html file in your folder. For example, 
+'images/catfish.jpg' or even just 'index.css'
+
+Some of the core tags for document structure are:
+
+<title>my title</title> -- goes in <head> and is displayed as the document title
+
+<h1>My Heading</h1> -- Heading heirarchy. h2, h3, h4, h5, h6 as well.
+<p>A paragraph</p> -- A clean way of building paragraphs
+<ul> -- unordered list
+<ol> -- ordered list
+<li> -- a list item, wrapped in either <ol> or <ul>
+<a href="http://google.com">Click Here!</a> -- a hyperlink! (anchor tag)
+
+<br/> -- a line break. Useful for "carriage returns"
+<img src="images/catfish.jpg" /> -- an image tag!
+<hr/> -- a "horizontal rule". Useful for clean document breaks
+
+<!-- this is a comment --> -- Comments, useful for "notes to self"
+
+<table></table> -- Create a table (wrapped around the rows and cells)
+<tr></tr> -- Indicates a table row (wrapped around table cells)
+<td></td> -- Indicates a table cell
+<th></th> -- special <td> that indicates "table header"
+
+Examples of list and table
+
+<ol>
+   <li>This is my first item</li>
+   <li>This is my second item</li>
+   <li>This is my third item</li>
+</ol>
+
+<ul>
+   <li>Milk</li>
+   <li>Eggs</li>
+   <li>Cheese</li>
+</ul>
+
+<table>
+   <!-- Start Table Header -->
+   <tr>
+      <th>Name</th>
+      <th>Eye Color</th>
+      <th>Fav. Animal</th>
+   </tr>
+   <!-- Start Table Body -->
+   <tr>
+      <td>Blaine</td>
+      <td>Hazel</td>
+      <td>Catfish</td>
+   </tr>
+   <tr>
+      <td>Amanda</td>
+      <td>Green</td>
+      <td>Elephant</td>
+   </tr>
+</table>

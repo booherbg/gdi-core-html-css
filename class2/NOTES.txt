@@ -1,0 +1,80 @@
+NOTES
+=====
+
+CSS -- cascading stylesheets. Control all properties of HTML objects
+Examples: colors, positions, size, and beyond.
+
+A css rule is made up of the selector, then an open curly brace, followed by
+a list of rules you'd like to apply with a semi-colon at the end of each 
+rule, and then a closing curly brace. Like this:
+
+p {
+   padding: 20px;
+   font-size: 14pt;
+}
+
+In CSS, you must "select" which object you want to apply a set of rules to.
+There are three typical kinds of "selectors":
+  * Select by the tag name
+  * Select by the class
+  * Select by the unique ID
+
+Example:
+
+<h2 class="sub-heading" id="hobbies">My Hobbies</h2>
+ |          |                ^---- #hobbies {}
+ |          ^------- .sub-heading {}
+ ^----- h2 {}
+
+ There are also ways to be more "specific" in your selectors:
+   * p em {} -- Decendent (All <em> inside a <p>)
+   * p > a {} -- Child Of (All <a> tags that are immediate children of <p>)
+
+ There are also a few extra "psuedo" classes, like
+   * :hover -- activates only when an object is hovered
+   * :visited :active -- unique to the <a> tag
+   * :nth-child(1), :last-child, :first-child -- more advanced selectors
+         that enable you to select a unique object in a list, for example
+         to make the last table row have a unique background color.
+
+Each element has both unique and common css values. Some common ones are:
+   * color (typically text color)
+   * background-color (and background-image, background-size, etc.)
+   * font-size, font-family, font-weight
+   * width, height
+   * position, display
+   * Many more https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+
+There are several units available too, both legacy and modern. Examples:
+   * px -- pixels (1/96th of 1in)
+   * pt -- points (1/72 of 1in)
+   * em -- Relative to font-size of the element (2em = 2x current font-size)
+   * % -- percent
+   * vh, vw -- relative to 1% of height/width of viewport
+   * A few others too that are used less often
+      http://www.w3schools.com/cssref/css_units.asp
+
+There are three ways to link up your css to your html:
+   * External link with a <link> tag in the <head> of your document (recommended)
+   * Embedded in <style> tags within the <head> of your document
+   * Inline in the style="" attribute of individual tags.
+
+External is best because you can keep cleare separation, and reuse css over
+multiple files.
+<head>
+   <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+Embedded works if you know you'll only have a single html file.
+<head>
+   <style type="text/css">
+      p {
+         color: red;
+         border: 1px solid black;
+      }
+   </style>
+</head>
+
+Inline is the "easy way", but always ends in maintenance issues because it 
+can be hard to track down changes.
+<p style="color: red; border: 1px solid black">Text</p>
