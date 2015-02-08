@@ -1,0 +1,6 @@
+How to center the parent with two floats:
+
+1. Set it to overflow: auto
+2. Set to inline-block, then set the body to text-align: center (because margin fails)
+3. Use clearfix (advanced)
+4. Set a fixed height
