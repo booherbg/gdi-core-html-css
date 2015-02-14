@@ -5,12 +5,24 @@ body {
    color: #003300;
 }
 
+h1 {
+   border-bottom: 1px dashed black;
+}
+
+h3 {
+   font-weight: normal;
+}
+p, li {
+   color: black;
+}
+
 a {
    color: #003300;
    text-decoration: none;
    font-weight: bold;
 }
 
+/* This is the "top level" container div that holds both #sidebar and #main */
 #container {
    background-color: white;
    padding: 20px;
@@ -20,64 +32,131 @@ a {
    background-image: url('images/eight_horns.png');
 }
 
-.header-image {
-   position: relative;
-}
-
-.header-image img {
-   width: 100%;
-}
-
-.header-image .caption {
-   background-color: white;
-   opacity: .4;
-   color: black;
-
-   position: absolute;
-   bottom: 10px;
-   right: 10px;
-   padding: 5px 15px;
-}
-h1 {
-   border-bottom: 1px dashed black;
-}
-h3 {
-   font-weight: normal;
-}
-p, li {
-   color: black;
-}
-
 /* New stuff for class 3 */
+/* This is the right side column */
 #main {
    width: 600px;
    float: left;
 }
 
+/* Left column */
 #sidebar {
    width: 200px;
    float: left;
 }
 
+/* Set up the sidebar navigation list */
 #sidebar ul {
-   padding-left: 0px;
+   padding-left: 0px; /* Scoot the list to the left */
 }
 
 #sidebar li {
-   list-style: none;
+   list-style: none; /* Remove the bullet points */
 }
 
 #sidebar li a {
-   display: block;
-   padding: 10px;
+   display: block; /* Make the links take up the entire width (so you can hover better!) */
+   padding: 10px; /* Fill out the links -- great for hovering */
 }
 
 #sidebar li a:hover {
-   background-color: rgba(0, 255, 0, .2);
-   color: black;
+   background-color: rgba(0, 255, 0, .2); /* Add a transparent background on :hover */
+   color: black; /* Make the color black to stand out */
 }
 
+/* New Stuff -- Class 4 */
+.header-image {
+   /* position: relative means that any children under this that are set to
+      position: absolute will use this parent as the "base". So a value of
+      top: 0; and left:0; will place the child element at the top left of
+      this .header-image. If you leave this out, the child element will 
+      instead be placed at the top left of the entire page */
+   position: relative; 
+}
+.header-image img {
+   width: 100%; /* Make the image very wide */
+   border-radius: 10px; /* Make it have round corners (fun!) */
+}
+
+.header-image .caption {
+   background-color: rgba(250, 20, 150, .3); /* Give it a background color */
+   position: absolute; /* Absolutely positioned (anchors it to the parent who is position: relative) */
+   bottom: 10px; /* Put it to the bottom of the parent container, 10px off the bottom */
+   right: 10px; /* Anchor it 10px from the right side */
+   padding: 10px 20px; /* Give it some room to breathe */
+   font-size: 1.3em;
+
+   border: 2px solid; /* Give it a nice border */
+   border-radius: 25px; /* Give it some round corners */
+   /*box-shadow: 10px 10px 5px #fff;*/ /* Box shadow, if you'd like */
+}
+
+.header-image .caption p {
+   color: white; /* Make the font color white */
+}
+
+/* Contact Page */
+
+/* Make the icons a reasonable size */
+.contact-table .social-icon {
+   width: 40px;
+   margin-right: 20px;
+}
+
+/* The table is wide, and has some borders to it */
+.contact-table {
+   width: 100%;
+   border: 1px solid #999;
+   border-collapse: separate;
+   border-spacing: 0px;
+}
+
+/* Add a border under each row, and give it some padding to flush it out */
+.contact-table td {
+   padding: 10px 5px;
+   border-bottom: 1px dashed #aaa;
+}
+
+/* Remove the border on the last row so it doesn't conflict w/ the table border */
+.contact-table tr:last-child td {
+   border: 0px;
+}
+
+/* Make the first column bold! */
+.contact-table td:first-child {
+   font-weight: bold;
+}
+
+/* The actual row itself is a grey color */
+.contact-table tr {
+   background-color: #eee;
+}
+
+/* Give a nice border to the map, and set give it some space below the contact table */
+.contact-map {
+   border: 1px solid #eee;
+   margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Contact Table */
+/*
 .contact-table {
    width: 100%;
    border: 1px solid #999;
@@ -106,7 +185,7 @@ p, li {
 .contact-map {
    margin-top: 10px;
    border: 1px solid #aaa;
-}
+} */
 /* End Contact Table */
 
 footer {
